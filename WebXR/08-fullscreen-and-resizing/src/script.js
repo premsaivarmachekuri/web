@@ -1,11 +1,13 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-
+import {ARButton} from 'three/examples/jsm/webxr/ARButton.js'
+//console.log(ARButton)
 /**
  * Base
  */
 // Canvas
+
 const canvas = document.querySelector('canvas.webgl')
 
 // Scene
@@ -82,7 +84,8 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  * Animate
  */
 const clock = new THREE.Clock()
-
+const button = ARButton.createButton(renderer)
+document.body.appendChild(button)
 const tick = () =>
 {
     const elapsedTime = clock.getElapsedTime()
