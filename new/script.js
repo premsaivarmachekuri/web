@@ -37,6 +37,8 @@ renderer.setSize(sizes.width, sizes.height)
 // Enable XR
 renderer.xr.enabled = true;
 
+const axesHelper = new THREE.AxesHelper(3)
+scene.add(axesHelper)
 document.body.appendChild(renderer.domElement)
 
 controls.enableDamping = true 
