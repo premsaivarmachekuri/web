@@ -39,10 +39,10 @@ const tick = () => {
     controls.update()
     renderer.render(scene,camera)
     window.requestAnimationFrame(tick)
+    renderer.xr.enabled = true 
 }
 tick()
 console.log("Hello World")
 
-const button = ARButton.createButton(renderer)
-document.body.appendChild(button)
-renderer.xr.enabled = true 
+const button = ARButton.createButton(renderer);
+document.body.appendChild(button);
