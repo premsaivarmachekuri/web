@@ -30,12 +30,19 @@ const renderer = new THREE.WebGLRenderer(
 )
 renderer.setSize(sizes.width, sizes.height)
 renderer.render(scene, camera)
-
+controls.enableDamping = true 
+const clock = new THREE.Clock()
 const tick = () => {
+    const elapsedTime = clock.getElapsedTime()
+    mesh.rotation.y = elapsedTime * 2
+    mesh.position.z = Math.sin(elapsedTime)
+    controls.update()
     renderer.render(scene,camera)
     window.requestAnimationFrame(tick)
 }
 tick()
+console.log("Hello World")
 
 const button = ARButton.createButton(renderer)
 document.body.appendChild(button)
+renderer.xr.enabled = true 
