@@ -47,8 +47,8 @@ controls.enableDamping = true
 const clock = new THREE.Clock()
 const tick = () => {
     const elapsedTime = clock.getElapsedTime()
-    mesh.rotation.y = elapsedTime * 2
-    mesh.position.z = Math.sin(elapsedTime)
+    mesh.rotation.y = elapsedTime * Math.PI
+    mesh.position.y = Math.sin(elapsedTime)
     controls.update()
     renderer.render(scene,camera)
     
